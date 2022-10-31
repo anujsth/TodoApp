@@ -43,4 +43,17 @@ form.addEventListener("submit", (event) => {
   task_el.appendChild(task_action_el);
 
   list_el.appendChild(task_el);
+
+  input.value = "";
+
+  task_button_el.addEventListener("click", () => {
+    if (task_button_el.innerText.toLowerCase() == "edit") {
+      task_input_el.removeAttribute("readonly");
+      task_button_el.innerText = "Save";
+      task_input_el.focus();
+    } else {
+      task_input_el.setAttribute("readonly", "readonly");
+      task_button_el.innerText = "Edit";
+    }
+  });
 });
