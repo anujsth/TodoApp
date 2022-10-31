@@ -55,5 +55,9 @@ form.addEventListener("submit", (event) => {
       task_input_el.setAttribute("readonly", "readonly");
       task_button_el.innerText = "Edit";
     }
+
+    task_delete_el.addEventListener("click", () => {
+      list_el.removeChild(task_el);
+    });
   });
 });
