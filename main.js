@@ -25,5 +25,22 @@ form.addEventListener("submit", (event) => {
   task_input_el.setAttribute("readonly", "readonly");
 
   task_content_el.appendChild(task_input_el);
+
+  const task_action_el = document.createElement("div");
+  task_action_el.classList.add("actions");
+
+  const task_button_el = document.createElement("button");
+  task_button_el.classList.add("edit");
+  task_button_el.innerText = "Edit";
+
+  const task_delete_el = document.createElement("button");
+  task_delete_el.classList.add("delete");
+  task_delete_el.innerText = "Delete";
+
+  task_action_el.appendChild(task_button_el);
+  task_action_el.appendChild(task_delete_el);
+
+  task_el.appendChild(task_action_el);
+
   list_el.appendChild(task_el);
 });
